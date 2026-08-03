@@ -49,3 +49,14 @@ def count_candles(symbol: str, timeframe: str) -> int:
         return c.execute(
             "SELECT COUNT(*) FROM candles WHERE symbol=? AND timeframe=?",
             (symbol, timeframe)).fetchone()[0]
+
+def load_df(symbol: str, timeframe: str):
+    """Return all candles for one symbol/timeframe as a pandas DataFrame,
+    oldest first, indexed by timestamp."""
+    import pandas as pd
+    with _conn() as c:
+        df = pd.read_sql_query(
+            "SELECT ts, open, high, low, close, volume FROM candles "
+            "WHERE symbol=? AND timeframe=? ORDER BY ts",
+            c, params=(symbol, timeframe), parse_dates=["ts"])
+    return df.set_index("ts")
