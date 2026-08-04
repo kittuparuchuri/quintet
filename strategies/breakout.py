@@ -2,7 +2,7 @@
 from datetime import datetime, timezone
 from models import Signal
 
-LOOKBACK = 20
+LOOKBACK = 55
 VOL_MULT = 1.5       # volume must be 1.5x its average — the fakeout filter
 STOP_EXIT = 0.985    # simple exit: close 1.5% below the recent high -> leave
 

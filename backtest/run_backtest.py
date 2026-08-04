@@ -12,8 +12,10 @@ COSTS = {            # fee + slippage per SIDE (entry and exit each pay this)
     "GLD": 0.0005, "USO": 0.0005,        # 0.05%
     "BTC/USD": 0.0035,                    # 0.25% fee + 0.10% slippage
 }
-PLAN = [("SPY", "15Min", meanrev), ("QQQ", "15Min", meanrev),
-        # ("BTC/USD", "1Hour", breakout),
+PLAN = [
+        # ("SPY", "15Min", meanrev),
+        # ("QQQ", "15Min", meanrev),
+        ("BTC/USD", "1Hour", breakout),
         # ("GLD", "4Hour", trend),
         # ("USO", "4Hour", trend),
         ]

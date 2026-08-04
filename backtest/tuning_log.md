@@ -30,3 +30,15 @@ Verdict: FALSIFIED. Trade count barely dropped (1168->850), avg worsened (-0.030
 win% fell below 50%. Deeper entries found no additional edge.
 DECISION: meanrev RETIRED for SPY and QQQ — edge thinner than costs at 15-min frequency,
 confirmed across two stop regimes and two entry thresholds.
+
+## Experiment 3 — 2026-08-04 — BTC breakout LOOKBACK 55 (was 20). ATR stop kept. In-sample only.
+Predictions (before running):
+- far fewer trades (maybe 60-100 vs 254)
+- win% rises above 35%; winners much larger (real trends, not noise)
+- PASS bar: positive total AND avg > +0.014% (2x BTC round-trip cost of 0.7%... i.e. avg > +1.4%).
+  Below bar = BTC breakout retires; no further BTC experiments.
+Results:
+Verdict: FALSIFIED. Win% flat (25%), avg -0.59% vs required +1.4%. Two lookbacks (20, 55)
+produced near-identical losses.
+DECISION: BTC breakout RETIRED — no detectable edge at 1-hour frequency against 0.7%
+round-trip costs. No further BTC experiments (anti-overfitting rule).
