@@ -13,11 +13,11 @@ COSTS = {            # fee + slippage per SIDE (entry and exit each pay this)
     "BTC/USD": 0.0035,                    # 0.25% fee + 0.10% slippage
 }
 PLAN = [
-        # ("SPY", "15Min", meanrev),
-        # ("QQQ", "15Min", meanrev),
-        ("BTC/USD", "1Hour", breakout),
-        # ("GLD", "4Hour", trend),
-        # ("USO", "4Hour", trend),
+        # ("SPY", "15Min", meanrev),      # retired, exp 2
+        # ("QQQ", "15Min", meanrev),      # retired, exp 2
+        # ("BTC/USD", "1Hour", breakout), # retired, exp 3
+        ("GLD", "4Hour", trend),
+        ("USO", "4Hour", trend),
         ]
 
 SPLIT = "2025-01-01"     # tune BEFORE this date; judge AFTER (sealed exam)
@@ -72,4 +72,4 @@ for symbol, tf, strat in PLAN:
     df_out = df[df.index >= SPLIT]
     print(f"\n{symbol} {tf} [{strat.__name__.split('.')[-1]}]", flush=True)
     report("in-sample", run(symbol, tf, strat, df_in))
-    # report("OUT-sample", run(symbol, tf, strat, df_out))   # SEALED while tuning
+    report("OUT-sample", run(symbol, tf, strat, df_out))   # SEALED while tuning

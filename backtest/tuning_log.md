@@ -42,3 +42,15 @@ Verdict: FALSIFIED. Win% flat (25%), avg -0.59% vs required +1.4%. Two lookbacks
 produced near-identical losses.
 DECISION: BTC breakout RETIRED — no detectable edge at 1-hour frequency against 0.7%
 round-trip costs. No further BTC experiments (anti-overfitting rule).
+
+## STEP 6 — FINAL VERDICTS (2026-08-04)
+| Strategy/Market | Verdict | Evidence |
+|---|---|---|
+| GLD trend 4h    | PROVISIONAL PASS | OUT +13.6%, maxDD -13.9%, 20 trades, avg 7x costs; consistent in ALL configs. Paper campaign = real trial. |
+| USO trend 4h    | UNSTABLE — observation-only in paper | in-sample -24% vs OUT +29% on 21 trades, 19% win: 1-2 outlier trades, no consistent edge. |
+| SPY meanrev 15m | RETIRED | Edge < costs across 2 stop regimes + 2 entry depths (exp 1-2). |
+| QQQ meanrev 15m | RETIRED | Same. |
+| BTC breakout 1h | RETIRED | ~-0.6%/trade vs +1.4% required, across lookback 20 and 55 (exp 3). |
+
+Memorized numbers: GLD maxDD = -13.9% (OUT). If live GLD ever exceeds ~-15%, investigate before trusting further.
+Params going forward: trend EMA 20/50, ATR stop 2.0x14, 4h candles.
