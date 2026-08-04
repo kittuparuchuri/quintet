@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from models import Signal
 
 LOOKBACK = 20        # candles used for the average
-ENTRY_Z = -2.0       # how stretched before we buy
+ENTRY_Z = -2.5       # how stretched before we buy
 EXIT_Z = -0.25       # snap-back point where we exit
 
 def zscore(df):
