@@ -67,5 +67,6 @@ def evaluate(signal, equity, todays_pnl_pct, open_positions, tf_label):
     qty = float(min(qty, max_qty))
     if qty < 1:
         _log_veto(signal.symbol, signal.strategy, "qty rounds to zero"); return None
-    stop_price = round(entry_est - ATR_MULT * a, 2)
+    stop_price = round(float(entry_est - ATR_MULT * a), 2)
     return OrderIntent(signal.symbol, signal.side, qty, stop_price, signal.strategy)
+

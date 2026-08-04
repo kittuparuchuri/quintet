@@ -26,7 +26,7 @@ def submit(intent):
         qty=intent.qty,
         side=OrderSide.BUY if intent.side == "buy" else OrderSide.SELL,
         time_in_force=TimeInForce.GTC if is_crypto else TimeInForce.DAY,
-        order_class=None if is_crypto else OrderClass.BRACKET,
+        order_class=None if is_crypto else OrderClass.OTO,
         stop_loss=None if is_crypto else StopLossRequest(stop_price=intent.stop_price),
         client_order_id=_fingerprint(intent),
     )
@@ -48,3 +48,4 @@ def reconcile():
     positions = {p.symbol: float(p.qty) for p in client.get_all_positions()}
     print("Reconcile - broker says we hold:", positions or "nothing")
     return positions
+
