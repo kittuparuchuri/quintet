@@ -94,6 +94,7 @@ def nightly_report():
     log(f"NIGHTLY REPORT | equity={equity:,.0f} todays_pnl={pnl:+.2%} | signals_today={sigs} vetoes_today={vetoes}")
 
 if __name__ == "__main__":
+    store.init_db()
     log("=== orchestrator starting ===")
     executor.reconcile()
     sched = BlockingScheduler(timezone="America/New_York")
@@ -105,5 +106,6 @@ if __name__ == "__main__":
     log("scheduler armed: ticks 10:00/14:00/15:55 ET, heartbeat 5min, reports 08:30/17:00 ET")
     tick()
     sched.start()
+
 
 
