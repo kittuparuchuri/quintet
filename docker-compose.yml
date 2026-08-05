@@ -1,0 +1,9 @@
+﻿services:
+  bot:
+    build: .
+    env_file: .env
+    restart: always
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DB_PATH=/app/data/quintet.db

@@ -1,9 +1,10 @@
-"""SQLite persistence. The whole database is one file: quintet.db."""
+﻿"""SQLite persistence. The whole database is one file: quintet.db."""
 import sqlite3
 from datetime import datetime, timezone
 from models import Candle
 
-DB_PATH = "quintet.db"
+import os
+DB_PATH = os.getenv("DB_PATH", "quintet.db")
 
 def _conn():
     c = sqlite3.connect(DB_PATH)

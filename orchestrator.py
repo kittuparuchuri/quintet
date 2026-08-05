@@ -74,6 +74,12 @@ def tick():
 
 def heartbeat():
     log(f"heartbeat | state={bot_state.get_state()}")
+    url = os.getenv("HEALTHCHECK_URL")
+    if url:
+        try:
+            import httpx; httpx.get(url, timeout=10)
+        except Exception as e:
+            log(f"healthcheck ping failed: {e}")
 
 def morning_report():
     positions = executor.reconcile()
@@ -99,4 +105,5 @@ if __name__ == "__main__":
     log("scheduler armed: ticks 10:00/14:00/15:55 ET, heartbeat 5min, reports 08:30/17:00 ET")
     tick()
     sched.start()
+
 
