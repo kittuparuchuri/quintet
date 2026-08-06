@@ -12,3 +12,6 @@ NOT trigger restart: always - policy guards crashes, not operator actions.
 E(b) dead-bot alert: bot killed ~23:05 UTC, healthchecks flipped red, alert email received at
 kittuparuchuri@gmail.com. Resurrected via compose up; green restored.
 E(c) 24h soak: begins from this restart.
+
+## Decision 2026-08-06: Multi-market orchestrator built. Live: SPY+QQQ (meanrev 15m),
+GLD+USO (trend 4h). BTC shadow (breakout 1h, logged only - worst backtest bleeder).
