@@ -15,3 +15,7 @@ E(c) 24h soak: begins from this restart.
 
 ## Decision 2026-08-06: Multi-market orchestrator built. Live: SPY+QQQ (meanrev 15m),
 GLD+USO (trend 4h). BTC shadow (breakout 1h, logged only - worst backtest bleeder).
+
+## 2026-08-06: Multi-market deploy confirmed live and healthy on server. All 5 symbols
+evaluated cleanly, zero errors, GLD position intact through the upgrade. Watching for
+first correlation-filter veto (SPY/QQQ) and per-symbol P&L divergence per backtest predictions.
